@@ -1,0 +1,28 @@
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.testng.annotations.AfterTest;
+
+public class LoginFacebookTest {
+
+    @BeforeClass
+    public static void browser() {
+        BrowserManager.openBrowser();
+    }
+
+    @Test
+    public void loginFacebook() throws InterruptedException {
+        Navigation.goToFacebook();
+        LogInOrSignUpFacebookPage.clickLoginButton();
+        LogIntoFacebookPage.enterUsersCredentials("fupxzqr_carrieroman_1517492731@tfbnw.net", "Gwqipuo015c")
+                .clickLoginButton();
+        Assert.assertEquals("Cannot find Home link, user was not logged in!", "Home", FacebookUsersHomePage.usersHomeLinkText());
+
+    }
+
+    @AfterTest
+    public void closeBrowser() {
+        BrowserManager.closeBrowser();
+    }
+}
