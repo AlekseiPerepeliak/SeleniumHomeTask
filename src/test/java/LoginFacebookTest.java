@@ -15,7 +15,7 @@ public class LoginFacebookTest {
     public void loginFacebook() throws InterruptedException {
         Navigation.goToFacebook();
         LogInOrSignUpFacebookPage.clickLoginButton();
-        LogIntoFacebookPage.enterUsersCredentials("fupxzqr_carrieroman_1517492731@tfbnw.net", "Gwqipuo015c")
+        LogIntoFacebookPage.enterUsersCredentials("", "")
                 .clickLoginButton();
         Assert.assertEquals("Cannot find Home link, user was not logged in!", "Home", FacebookUsersHomePage.usersHomeLinkText());
 
